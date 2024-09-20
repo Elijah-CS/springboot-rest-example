@@ -1,0 +1,32 @@
+plugins {
+	// id 'org.springframework.boot' version '2.2.4.RELEASE'
+	// id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+	id 'java'
+	id 'idea'
+	id 'application'
+}
+
+group = 'com.ev'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+java {
+    sourceCompatibility = 1.17
+    targetCompatibility = 1.17
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web:3.2.1'
+	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.5.0'
+}
+
+test {
+}
+
+application {
+	mainClassName = 'com.ev.EvApplication'
+}
