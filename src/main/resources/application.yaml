@@ -1,6 +1,10 @@
 
 springdoc:
-    swagger-ui:
-        operationsSorter: method
-        tagsSorter: alpha
-        tryItOutEnabled: true 
+  title: Example API
+  version: 0.0.0
+  description: This is an example API 
+  swagger-ui:
+    operationsSorter: method
+    tagsSorter: alpha
+    tryItOutEnabled: true
+    syntaxHighlight.activated: false
