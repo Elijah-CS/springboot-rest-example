@@ -19,11 +19,12 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-web:3.2.1'
+	implementation 'org.springframework.boot:spring-boot-starter-web:3.2.6'
 	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.5.0'
+	implementation 'org.springdoc:springdoc-openapi-starter-common:2.5.0'
 	
-	compileOnly 'org.projectlombok:lombok:1.18.20'
-    annotationProcessor 'org.projectlombok:lombok:1.18.20'
+	compileOnly 'org.projectlombok:lombok:1.18.24'
+        annotationProcessor 'org.projectlombok:lombok:1.18.24'
 }
 
 test {
@@ -33,6 +34,6 @@ application {
 	mainClassName = 'com.example.Application'
 }
 
-tasks.withType(JavaCompile) {
-    options.compilerArgs.add("-parameters")
+tasks.named('compileJava') {
+    options.compilerArgs += ["-parameters"]
 }
