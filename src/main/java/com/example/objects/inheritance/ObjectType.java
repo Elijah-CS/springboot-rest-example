@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-// @JsonFormat(shape = JsonFormat.Shape.OBJECT)
+@JsonFormat(shape = JsonFormat.Shape.OBJECT)
 public enum ObjectType {
     TYPE1("type1", Type1.class),
     TYPE2("type2", Type2.class),
@@ -30,7 +30,6 @@ public enum ObjectType {
         return null;
     }
 
-    @JsonValue
     public String getName() {
         return name;
     }
@@ -39,7 +38,7 @@ public enum ObjectType {
         return clazz;
     }
 
-    @Override
+    @JsonValue
     public String toString() {
         return name;
     }
