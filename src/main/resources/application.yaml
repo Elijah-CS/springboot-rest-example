@@ -8,3 +8,18 @@ springdoc:
     tagsSorter: alpha
     tryItOutEnabled: true
     syntaxHighlight.activated: false
+
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/example
+    username: test
+    password: test
+    driverClassName: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+      show-sql: true

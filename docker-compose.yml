@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_USER=test
+      - POSTGRES_PASSWORD=test
+      - POSTGRES_POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=example
+    volumes:
+      - db:/data/postgres
+    ports:
+      - "5432:5432"
+    # restart: unless-stopped
+
+volumes:
+  db:

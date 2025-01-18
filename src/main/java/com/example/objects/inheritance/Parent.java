@@ -1,6 +1,5 @@
 package com.example.objects.inheritance;
 
-import com.base.objects.AuditModel;
 import com.example.serialization.ParentDeserializer;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
@@ -14,6 +13,8 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonDeserialize(using = ParentDeserializer.class)
-public abstract class Parent extends AuditModel {
+public abstract class Parent {
     private String family;
+
+    public abstract boolean validate();
 }
