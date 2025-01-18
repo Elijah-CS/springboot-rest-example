@@ -1,6 +1,5 @@
 package com.example.objects.inheritance;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonValue;
 
@@ -17,17 +16,6 @@ public enum ObjectType {
     private ObjectType(String name, Class<? extends Parent> clazz) {  
         this.name = name;
         this.clazz = clazz;
-    }
-
-    public static ObjectType fromValue(String value) {
-        System.out.println("HELLOOOOOOOOOOOOOO");
-
-        for (ObjectType type: ObjectType.values()) {
-            if (type.getName().equals(value)) {
-                return type;
-            }
-        }
-        return null;
     }
 
     public String getName() {

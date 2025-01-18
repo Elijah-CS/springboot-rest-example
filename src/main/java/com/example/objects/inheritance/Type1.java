@@ -11,5 +11,16 @@ import lombok.Setter;
 @AllArgsConstructor
 public class Type1 extends Parent {
  
-    private String string;
+    private String name;
+
+    @Override
+    public boolean validate() {
+        if (name == null) {
+            return false;
+        }
+
+        return true;
+    }
+
+    
 }

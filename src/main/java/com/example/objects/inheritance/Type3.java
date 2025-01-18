@@ -13,4 +13,13 @@ import lombok.Setter;
 @AllArgsConstructor
 public class Type3 extends Parent {
     private Date date;
+
+    @Override
+    public boolean validate() {
+        if (date == null) {
+            return false;
+        }
+
+        return true;
+    }
 }
