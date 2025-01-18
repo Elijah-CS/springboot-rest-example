@@ -8,9 +8,10 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
 
 import com.base.db.BaseRepository;
+import com.base.objects.AuditModel;
 
 @Service
-public class BaseService<T> {
+public class BaseService<T extends AuditModel> {
     
     private final BaseRepository<T> repository;
 

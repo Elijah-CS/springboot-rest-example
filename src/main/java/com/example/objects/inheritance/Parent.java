@@ -1,6 +1,7 @@
 package com.example.objects.inheritance;
 
 import com.example.serialization.ParentDeserializer;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 import lombok.AllArgsConstructor;
@@ -16,5 +17,19 @@ import lombok.Setter;
 public abstract class Parent {
     private String family;
 
-    public abstract boolean validate();
+    @JsonIgnore
+    public final boolean validate() {
+        if (family == null) {
+            return false;
+        }
+
+        if (!customValidation()) {
+            return false;
+        }
+
+        return true;
+    }
+
+    @JsonIgnore
+    public abstract boolean customValidation();
 }

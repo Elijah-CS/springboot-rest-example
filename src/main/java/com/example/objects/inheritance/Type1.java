@@ -14,7 +14,7 @@ public class Type1 extends Parent {
     private String name;
 
     @Override
-    public boolean validate() {
+    public boolean customValidation() {
         if (name == null) {
             return false;
         }

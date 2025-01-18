@@ -15,7 +15,7 @@ public class Type3 extends Parent {
     private Date date;
 
     @Override
-    public boolean validate() {
+    public boolean customValidation() {
         if (date == null) {
             return false;
         }

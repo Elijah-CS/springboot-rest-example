@@ -16,6 +16,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.deser.BeanDeserializerFactory;
 import com.fasterxml.jackson.databind.deser.ResolvableDeserializer;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
+import com.fasterxml.jackson.databind.exc.InvalidFormatException;
 import com.fasterxml.jackson.databind.type.TypeFactory;
 
 public class ParentDeserializer extends StdDeserializer<Parent> {
@@ -53,7 +54,11 @@ public class ParentDeserializer extends StdDeserializer<Parent> {
                 treeParser.nextToken();
             }
 
-            deserializedParent = (Parent) defaultDeserializer.deserialize(treeParser, context);
+            try {
+                deserializedParent = (Parent) defaultDeserializer.deserialize(treeParser, context);
+            } catch (InvalidFormatException e) {
+                continue;
+            }
 
             if (!deserializedParent.validate()) {
                 continue;

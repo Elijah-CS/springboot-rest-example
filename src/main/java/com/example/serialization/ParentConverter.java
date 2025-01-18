@@ -27,6 +27,8 @@ public class ParentConverter implements AttributeConverter<Parent, String> {
 
     @Override
     public Parent convertToEntityAttribute(String dbParent) {
+        System.out.println("In convertToEntityAttribute");
+        System.out.println(dbParent);
         return mapper.convertValue(dbParent, Parent.class);
     }
 }

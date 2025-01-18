@@ -13,10 +13,11 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class ExampleController {
- 
+
+
     @Service
     public class MyService extends BaseService<Example> {
-
+        
         @Autowired
         public MyService(ExampleRepository exampleRepository) {
             super(exampleRepository);

@@ -13,12 +13,8 @@ public class Type2 extends Parent {
     private Integer number;
 
     @Override
-    public boolean validate() {
-        if (number == null) {
-            return false;
-        }
-
-        if (number < 0) {
+    public boolean customValidation() {
+        if (number == null || number < 0) {
             return false;
         }
 
